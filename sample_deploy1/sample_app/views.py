@@ -6,7 +6,8 @@ from sample_app.models import Details
 def HOME(request):
     if request.method == "POST":
         Details.objects.create(name=request.POST['name'], profile=request.POST['pf'])
-        return render(request, 'margins.html')
+        return redirect('/hi/')
+       # return render(request, 'margins.html')
     return render(request, 'margins.html')
 
 def display_det(request):
